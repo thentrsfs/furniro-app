@@ -36,3 +36,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins);
 }
+
+/* Hide scrollbar */
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0px;
+}
