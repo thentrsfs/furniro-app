@@ -5,6 +5,7 @@ import GoldenButton from "../ui/GoldenButton";
 import { rooms } from "@/data/rooms";
 import { useState } from "react";
 const Rooms = () => {
+  const [loading, setLoading] = useState(true);
      const [currentSlide, setCurrentSlide] = useState(0);
       const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
@@ -33,6 +34,7 @@ inspiration</h4>
             {rooms.map((room) => (
               <div className="keen-slider__slide" key={room.id}>
                 <div className="flex gap-6">
+                  
                   <Image
                     src={room.images[0]}
                     alt={`${room.title} image 1`}

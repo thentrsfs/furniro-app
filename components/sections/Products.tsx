@@ -12,6 +12,7 @@ const Products = ({ isHomePage,isMobile, related, category }: { isHomePage: bool
   const pathname = usePathname();
   const { itemsToShow, selectedCategory, setSelectedCategory, getStartIndex, getEndIndex, getSortedProducts, getFilteredProducts, setCurrentPage, currentPage } = useProductStore();
   const {formatPrice} = useCartStore();
+  const [loading, setLoading] = useState(true);
   
   const [homeVisibleCount, setHomeVisibleCount] = useState(itemsToShow);
 
@@ -76,7 +77,12 @@ const Products = ({ isHomePage,isMobile, related, category }: { isHomePage: bool
             </div>
           )}
           <Link href={`/products/${item.id}`} className="w-full lg:h-[20rem] h-60 relative overflow-hidden">
-          <Image fill src={item.images[0]} alt={item.title} className="w-full object-cover" />
+          {loading && (
+            <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-10 h-10 border-4 border-golden border-t-transparent rounded-full animate-spin"></div>
+        </div>
+          )}
+          <Image fill src={item.images[0]} alt={item.title} onLoadingComplete={() => setLoading(false)} className="w-full object-cover" />
           </Link>
           <div className="flex flex-col gap-2 p-4">
             <Link className="z-10" href={`/products/${item.id}`} >

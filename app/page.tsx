@@ -12,6 +12,7 @@ import GoldenButton from "@/components/ui/GoldenButton";
 export default function Home() {
 
   const [isMobile, setIsMobile] = useState(false);
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
   setIsMobile(window.innerWidth < 1024);
@@ -19,7 +20,12 @@ export default function Home() {
   
   return (
   <div className="relative bg-white flex flex-col items-center lg:gap-14 pb-12 gap-8">
-        <Image src='/backgrounds/scandinavian-bg.svg' priority alt="scandinavian-interior-mockup-wall-decal-background" width={1440} height={718} className="w-full relative " />
+     {loading && (
+            <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-10 h-10 border-4 border-golden border-t-transparent rounded-full animate-spin"></div>
+        </div>
+          )}
+        <Image src='/backgrounds/scandinavian-bg.svg' onLoadingComplete={() => setLoading(false)} priority alt="scandinavian-interior-mockup-wall-decal-background" width={1440} height={718} className="w-full relative " />
         <div className="lg:absolute lg:top-40 lg:right-20 2xl:right-50 2xl:top-60 gap-4 lg:gap-2 lg:px-11 justify-around lg:pt-8 lg:pb-2 flex flex-col rounded-[10px] lg:w-[643px] lg:h-[443px] mx-6 p-6 bg-yellow-light">
           <div className="flex flex-col gap-2">
 <p className="text-font-color font-semibold tracking-[3px]">New Arrival</p>
