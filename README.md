@@ -45,16 +45,16 @@ This project allows users to browse products, filter and sort them, add items to
 
 ### 🏠 Home Page
 
-![Home Page Screenshot](/screenshots/furniro-home.png)
+![Home Page Screenshot](public/screenshots/furniro-home.png)
 
 ### 📦 Product Listing with Filters
-![Products Screenshot](/screenshots/furniro-products.png)
+![Products Screenshot](public/screenshots/furniro-products.png)
 
 ### 🛒 Shopping Cart
-![Shopping Cart Screenshot](/screenshots/furniro-cart.png)
+![Shopping Cart Screenshot](public/screenshots/furniro-cart.png)
 
 ### 💳 Checkout Page
-![Checkout Page Screenshot](/screenshots/furniro-checkout.png)
+![Checkout Page Screenshot](public/screenshots/furniro-checkout.png)
 
 
 ---
