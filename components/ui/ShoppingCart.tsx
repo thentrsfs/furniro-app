@@ -12,7 +12,7 @@ const ShoppingCart = () => {
         onClick={closeCart}
         className="fixed inset-0 bg-black/50 z-15"
       />
-    <div className="flex flex-col absolute right-0 top-0 bg-white w-100 h-auto z-20 text-black p-8 gap-4">
+    <div className="flex flex-col absolute right-0 top-0 bg-white lg:w-100 h-auto z-20 text-black p-8 gap-4 w-full">
       <div className='flex justify-between'>
       <h1 className='font-semibold text-black text-2xl'>Shopping Cart</h1>
     <button className='cursor-pointer' onClick={closeCart}>
